@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cosmic Digitalz - Digital Marketing Agency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--navy:#0A0E27;
+--purple:#6366F1;
+--cyan:#06B6D4;
+--pink:#EC4899;
+--text:#F8FAFC;
+--gray:#94A3B8;
+
+--glass: rgba(255,255,255,0.05);
+--border: rgba(255,255,255,0.12);
+--glow: 0 0 60px rgba(99,102,241,0.35);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--navy);
+color:var(--text);
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* BACKGROUND */
+.bg{
+position:fixed;inset:0;z-index:-1;
+background:linear-gradient(135deg,#0A0E27,#161b3b);
+}
+.bg::before{
+content:'';
+position:absolute;
+width:900px;height:900px;
+top:-200px;left:-200px;
+background:radial-gradient(circle,rgba(99,102,241,.25),transparent 60%);
+animation:float 18s infinite ease-in-out;
+}
+@keyframes float{
+50%{transform:translate(50px,60px);}
+}
+
+/* NAV */
+nav{
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-between;align-items:center;
+padding:1.5rem 6%;
+backdrop-filter:blur(25px);
+background:rgba(10,14,39,.6);
+border-bottom:1px solid var(--border);
+z-index:999;
+}
+.logo{
+font-family:'Syne';
+font-size:1.8rem;font-weight:800;
+background:linear-gradient(135deg,var(--purple),var(--cyan));
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+nav ul{display:flex;gap:2rem;list-style:none;}
+nav a{color:var(--gray);text-decoration:none;font-weight:500;}
+nav a:hover{color:white}
+
+/* HERO */
+.hero{
+min-height:100vh;display:flex;align-items:center;justify-content:center;
+text-align:center;padding:8rem 5%;
+}
+.hero h1{
+font-family:'Syne';
+font-size:clamp(3rem,8vw,6rem);
+line-height:1.1;
+}
+.gradient{
+background:linear-gradient(135deg,var(--purple),var(--cyan),var(--pink));
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.hero p{color:var(--gray);max-width:650px;margin:1.5rem auto;}
+.btn{
+padding:1rem 2.5rem;border-radius:50px;
+background:linear-gradient(135deg,var(--purple),var(--pink));
+border:none;color:white;cursor:pointer;
+position:relative;overflow:hidden;text-decoration:none;
+display:inline-block;margin-top:1rem;
+}
+.btn::after{
+content:'';position:absolute;width:120%;height:100%;
+left:-120%;top:0;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+transition:1s;
+}
+.btn:hover::after{left:120%;}
+
+/* GLASS CARD */
+.card{
+background:var(--glass);
+backdrop-filter:blur(18px);
+border:1px solid var(--border);
+border-radius:22px;
+transition:.5s cubic-bezier(.19,1,.22,1);
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 30px 80px rgba(99,102,241,.35);
+}
+
+/* SECTIONS */
+section{padding:6rem 6%;}
+.title{
+font-family:'Syne';
+font-size:clamp(2.5rem,5vw,4rem);
+text-align:center;margin-bottom:1rem;
+}
+.subtitle{text-align:center;color:var(--gray);margin-bottom:4rem;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:2rem;
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:3rem;text-align:center;
+}
+.stats h3{
+font-family:'Syne';
+font-size:3rem;
+background:linear-gradient(135deg,var(--purple),var(--cyan));
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* CONTACT */
+.contact-box{
+max-width:800px;margin:auto;padding:3rem;
+}
+/* CONTACT CARDS */
+.contact-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+.contact-card{padding:2rem;text-align:center;border-radius:16px;}
+.contact-card .icon{width:64px;height:64px;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--cyan));color:white}
+.contact-card h3{margin:0 0 .5rem;font-family:'Syne';}
+.contact-card p{color:var(--gray);}
+.contact-card a{color:var(--text);text-decoration:none}
+input,textarea{
+width:100%;padding:1.2rem;margin-bottom:1.2rem;
+background:rgba(255,255,255,.05);
+border:1px solid var(--border);
+border-radius:10px;color:white;
+}
+footer{
+text-align:center;padding:3rem;color:var(--gray);
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,.03);
+}
+</style>
+</head>
+
+<body>
+<div class="bg"></div>
+
+<nav>
+<div class="logo">Cosmic Digitalz</div>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div>
+<h1>Elevate Your Brand in the <span class="gradient">Digital Universe</span></h1>
+<p>We transform ambitious brands into digital powerhouses through creative excellence and data-driven marketing.</p>
+<a href="#contact" class="btn">Start Your Journey</a>
+</div>
+</section>
+
+<section>
+<h2 class="title">Stats That Matter</h2>
+<div class="stats">
+<div><h3>08</h3><p>Brands Launched</p></div>
+<div><h3>200%</h3><p>Average ROI</p></div>
+<div><h3>30+</h3><p>Clients Served</p></div>
+<div><h3>150M+</h3><p>Impressions</p></div>
+</div>
+</section>
+
+<section id="services">
+<h2 class="title">Our Services</h2>
+<p class="subtitle">Premium solutions for modern brands</p>
+
+<div class="grid">
+<div class="card"><h3>Strategic Marketing</h3><p>Data-driven campaigns that convert attention into revenue.</p></div>
+<div class="card"><h3>Social Media Management</h3><p>Build communities and brand authority across platforms.</p></div>
+<div class="card"><h3>SEO & Content</h3><p>Rank higher, attract better, convert faster.</p></div>
+<div class="card"><h3>Brand Development</h3><p>Visual identity that creates lasting perception.</p></div>
+<div class="card"><h3>Web Development</h3><p>High-performance modern websites built for growth.</p></div>
+<div class="card"><h3>Graphic Designing</h3><p>Premium creatives that grab attention instantly.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="title">Let’s Work Together</h2>
+<div class="card contact-box">
+<input placeholder="Your Name"/>
+<input placeholder="Your Email"/>
+<textarea rows="5" placeholder="Tell us about your project"></textarea>
+<button class="btn">Send Message</button>
+</div>
+</section>
+
+<section id="contacts">
+<h2 class="title">Contact Details</h2>
+<div class="contact-grid">
+	<div class="card contact-card">
+		<div class="icon" aria-hidden="true">
+			<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7.5V16.5C3 17.3284 3.67157 18 4.5 18H19.5C20.3284 18 21 17.3284 21 16.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7.5L12 13.5L3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</div>
+		<h3>Email</h3>
+		<p><a href="mailto:enquiries.cosmicdigitalz@gmail.com">enquiries.cosmicdigitalz@gmail.com</a></p>
+	</div>
+
+	<div class="card contact-card">
+		<div class="icon" aria-hidden="true">
+			<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3.09a2 2 0 0 1 2 1.72c.12 1.06.37 2.09.73 3.06a2 2 0 0 1-.45 2.11L9.91 11.91a16 16 0 0 0 6.17 6.17l1.02-1.46a2 2 0 0 1 2.11-.45c.97.36 2 .61 3.06.73a2 2 0 0 1 1.72 2V16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</div>
+		<h3>Phone</h3>
+		<p><a href="tel:+919581743841">+91 9581743841</a></p>
+	</div>
+
+	<div class="card contact-card">
+		<div class="icon" aria-hidden="true">
+			<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 6-9 11-9 11s-9-5-9-11a9 9 0 1 1 18 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</div>
+		<h3>Location</h3>
+		<p>Hyderabad, India</p>
+	</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Cosmic Digitalz</p>
+</footer>
+
+</body>
+</html>              
